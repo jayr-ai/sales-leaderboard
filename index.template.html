@@ -95,7 +95,7 @@
   @media (max-width: 480px) { .tiles, .leaders { grid-template-columns: 1fr; } }
 
   /* Podium cards, Leaderboard page */
-  .podium { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 22px; }
+  .podium { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 22px; }
   .podium-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--card-sh); }
   .podium-card.g { border-color: var(--gold-line); box-shadow: var(--gold-sh1) 0 4px 12px 0, var(--gold-sh2) 0 20px 48px 0; background: linear-gradient(180deg, var(--gold-bg), transparent 60%), var(--paper); }
   .podium-card.s { border-color: var(--silver-line); }
@@ -190,6 +190,6 @@
   <!--AUDIT_START--><!--AUDIT_END-->
 
   <footer>
-    Sales Leaderboard, Ai Funding Solutions. Source: GoHighLevel pipeline {%roster.0.name%}, {%roster.1.name%}, {%roster.2.name%} and Stripe (Ai Funding Solutions LLC). Numbers are written only by render.js from data.json, never typed by hand.
+    Sales Leaderboard, Ai Funding Solutions. Source: GoHighLevel pipeline ({%rosterNames%}) and Stripe (Ai Funding Solutions LLC). Numbers are written only by render.js from data.json, never typed by hand.
   </footer>
 </div>

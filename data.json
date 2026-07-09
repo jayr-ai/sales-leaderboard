@@ -1,7 +1,7 @@
 {
   "asOf": "2026-07-08",
   "timezone": "America/Los_Angeles",
-  "generatedAtUtc": "2026-07-09T03:29:59+00:00",
+  "generatedAtUtc": "2026-07-09T04:20:18+00:00",
   "windows": {
     "day": {
       "start": "2026-07-08",
@@ -35,14 +35,11 @@
       "name": "Caleb Chase"
     },
     {
-      "key": "matthew",
-      "name": "Matthew Burns"
-    },
-    {
       "key": "dan",
       "name": "Dan Baldasso"
     }
   ],
+  "rosterNames": "Caleb Chase, Dan Baldasso",
   "leaderboard": {
     "day": [
       {
@@ -96,31 +93,6 @@
         "totalCalls": 1,
         "callHours": 0.0,
         "rank": 2,
-        "trend": "flat",
-        "trendNote": "flat vs prior period",
-        "badges": [],
-        "gapNote": "No cash collected yet this window"
-      },
-      {
-        "key": "matthew",
-        "name": "Matthew Burns",
-        "dealsClosed": 0,
-        "cash": "$0.00",
-        "cashCents": 0,
-        "callsBooked": 0,
-        "callsHeld": 0,
-        "noShow": 0,
-        "noShowRate": "awaiting",
-        "showed": 0,
-        "showRate": "awaiting",
-        "showRateNum": null,
-        "closeRate": "awaiting",
-        "closeRateNum": null,
-        "outboundCalls": 0,
-        "inboundCalls": 0,
-        "totalCalls": 0,
-        "callHours": 0.0,
-        "rank": 3,
         "trend": "flat",
         "trendNote": "flat vs prior period",
         "badges": [],
@@ -184,31 +156,6 @@
           "Best Show Rate"
         ],
         "gapNote": "No cash collected yet this window"
-      },
-      {
-        "key": "matthew",
-        "name": "Matthew Burns",
-        "dealsClosed": 0,
-        "cash": "$0.00",
-        "cashCents": 0,
-        "callsBooked": 4,
-        "callsHeld": 0,
-        "noShow": 1,
-        "noShowRate": "100%",
-        "showed": 0,
-        "showRate": "0%",
-        "showRateNum": 0.0,
-        "closeRate": "awaiting",
-        "closeRateNum": null,
-        "outboundCalls": 3,
-        "inboundCalls": 0,
-        "totalCalls": 3,
-        "callHours": 0.0,
-        "rank": 3,
-        "trend": "flat",
-        "trendNote": "flat vs prior period",
-        "badges": [],
-        "gapNote": "No cash collected yet this window"
       }
     ],
     "month": [
@@ -267,31 +214,6 @@
         "badges": [
           "Best Show Rate"
         ],
-        "gapNote": "No cash collected yet this window"
-      },
-      {
-        "key": "matthew",
-        "name": "Matthew Burns",
-        "dealsClosed": 0,
-        "cash": "$0.00",
-        "cashCents": 0,
-        "callsBooked": 9,
-        "callsHeld": 1,
-        "noShow": 4,
-        "noShowRate": "80%",
-        "showed": 1,
-        "showRate": "20%",
-        "showRateNum": 20.0,
-        "closeRate": "0%",
-        "closeRateNum": 0.0,
-        "outboundCalls": 8,
-        "inboundCalls": 0,
-        "totalCalls": 8,
-        "callHours": 0.0,
-        "rank": 3,
-        "trend": "flat",
-        "trendNote": "flat vs prior period",
-        "badges": [],
         "gapNote": "No cash collected yet this window"
       }
     ],
@@ -352,31 +274,6 @@
           "Best Show Rate"
         ],
         "gapNote": "No cash collected yet this window"
-      },
-      {
-        "key": "matthew",
-        "name": "Matthew Burns",
-        "dealsClosed": 0,
-        "cash": "$0.00",
-        "cashCents": 0,
-        "callsBooked": 9,
-        "callsHeld": 1,
-        "noShow": 4,
-        "noShowRate": "80%",
-        "showed": 1,
-        "showRate": "20%",
-        "showRateNum": 20.0,
-        "closeRate": "0%",
-        "closeRateNum": 0.0,
-        "outboundCalls": 8,
-        "inboundCalls": 0,
-        "totalCalls": 8,
-        "callHours": 0.0,
-        "rank": 3,
-        "trend": "flat",
-        "trendNote": "flat vs prior period",
-        "badges": [],
-        "gapNote": "No cash collected yet this window"
       }
     ],
     "allTime": [
@@ -436,31 +333,6 @@
         "badges": [
           "Best Show Rate"
         ],
-        "gapNote": "$4,997.00 to pass Caleb Chase"
-      },
-      {
-        "key": "matthew",
-        "name": "Matthew Burns",
-        "dealsClosed": 0,
-        "cash": "$0.00",
-        "cashCents": 0,
-        "callsBooked": 13,
-        "callsHeld": 2,
-        "noShow": 7,
-        "noShowRate": "78%",
-        "showed": 2,
-        "showRate": "22%",
-        "showRateNum": 22.22222222222222,
-        "closeRate": "0%",
-        "closeRateNum": 0.0,
-        "outboundCalls": 9,
-        "inboundCalls": 0,
-        "totalCalls": 9,
-        "callHours": 0.0,
-        "rank": 3,
-        "trend": "na",
-        "trendNote": "since launch, no prior period",
-        "badges": [],
         "gapNote": "$4,997.00 to pass Caleb Chase"
       }
     ]
@@ -1057,6 +929,11 @@
     "excludedTestRecords": 8,
     "totalOpportunitiesPulled": 198,
     "nonCloserCallsAllTime": 75,
-    "unattributedCashAllTime": "$0.00"
+    "unattributedCashAllTime": "$0.00",
+    "offboardedClosers": [
+      "Matthew Burns"
+    ],
+    "offboardedCashAllTime": "$0.00",
+    "offboardedDealsAllTime": 0
   }
 }

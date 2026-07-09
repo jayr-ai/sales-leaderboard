@@ -9,7 +9,7 @@ import json
 import sys
 from datetime import datetime, timezone
 
-from lib import CLOSERS, WINDOW_KEYS, PREV_OF, STAGE_DISPLAY, BOOKED_STAGES, money, pct, pct_num
+from lib import CLOSERS, ACTIVE_KEYS, WINDOW_KEYS, PREV_OF, STAGE_DISPLAY, BOOKED_STAGES, money, pct, pct_num
 
 
 def load(name):
@@ -180,14 +180,15 @@ def main():
     leaderboard = {}
     totals = {}
     leaders = {}
+    offboarded_summary = {}  # win_key -> {cashCents, deals, names}, for the audit disclosure
     ALL_KEYS = list(WINDOW_KEYS) + list(PREV_OF.values())
-    raw_rows = {}  # win_key -> per-closer row, including prev windows, before trend is attached
+    raw_rows = {}  # win_key -> every closer's row (active + offboarded), before trend is attached
 
     for win_key in ALL_KEYS:
         rows = []
         t_deals = t_cash = t_booked = t_held = t_noshow = t_showed = t_out = t_in = 0
         t_seconds = 0
-        for c in CLOSERS:
+        for c in CLOSERS:  # CLOSERS = full roster (active + offboarded); totals must include everyone who really contributed
             key = c["key"]
             call_row = calls["byCloser"][key][win_key]
             pipe_row = pipeline["byCloser"][key][win_key]
@@ -233,12 +234,18 @@ def main():
             t_seconds += call_row["seconds"]
 
         rows.sort(key=lambda r: (-r["cashCents"], -r["dealsClosed"], r["name"]))
-        for i, r in enumerate(rows):
-            r["rank"] = i + 1
         raw_rows[win_key] = rows
 
+        # The Leaderboard/Scorecard/Leaders strip only ever show active closers. Rank is
+        # assigned among active closers only, so an offboarded closer's past standing
+        # never occupies or shifts a rank a current closer should hold.
+        active_rows = [r for r in rows if r["key"] in ACTIVE_KEYS]
+        for i, r in enumerate(active_rows):
+            r["rank"] = i + 1
+        offboarded_rows = [r for r in rows if r["key"] not in ACTIVE_KEYS]
+
         if win_key in WINDOW_KEYS:
-            leaderboard[win_key] = rows
+            leaderboard[win_key] = active_rows
             totals[win_key] = {
                 "dealsClosed": t_deals,
                 "cash": money(t_cash),
@@ -255,14 +262,19 @@ def main():
                 "totalCalls": t_out + t_in,
                 "callHours": round(t_seconds / 3600.0, 1),
             }
+            offboarded_summary[win_key] = {
+                "cashCents": sum(r["cashCents"] for r in offboarded_rows),
+                "deals": sum(r["dealsClosed"] for r in offboarded_rows),
+                "names": [r["name"] for r in offboarded_rows],
+            }
             leaders[win_key] = {
-                "topCash": pick_leader(rows, "cashCents", "cash", require_positive=True),
-                "topCloseRate": pick_leader(rows, "closeRateNum", "closeRate"),
-                "topShowRate": pick_leader(rows, "showRateNum", "showRate"),
+                "topCash": pick_leader(active_rows, "cashCents", "cash", require_positive=True),
+                "topCloseRate": pick_leader(active_rows, "closeRateNum", "closeRate"),
+                "topShowRate": pick_leader(active_rows, "showRateNum", "showRate"),
                 "mostActive": pick_leader(
-                    [dict(r, totalCallsNum=r["totalCalls"]) for r in rows], "totalCallsNum", "totalCalls", require_positive=True),
+                    [dict(r, totalCallsNum=r["totalCalls"]) for r in active_rows], "totalCallsNum", "totalCalls", require_positive=True),
                 "topBooked": pick_leader(
-                    [dict(r, callsBookedNum=r["callsBooked"]) for r in rows], "callsBookedNum", "callsBooked", require_positive=True),
+                    [dict(r, callsBookedNum=r["callsBooked"]) for r in active_rows], "callsBookedNum", "callsBooked", require_positive=True),
             }
 
     # Attach trend deltas (day/week/month/quarter only, vs their prev-period counterpart).
@@ -301,8 +313,15 @@ def main():
 
     # Reconcile gates, every display window.
     for win_key in WINDOW_KEYS:
-        if totals[win_key]["dealsClosed"] != sum(r["dealsClosed"] for r in leaderboard[win_key]):
-            print("RECONCILE FAIL (leaderboard): %s dealsClosed total disagrees with row sum" % win_key)
+        # Team totals include every closer who ever really contributed (active or
+        # offboarded); the displayed rows are active-only, so the offboarded contribution
+        # (disclosed in the audit panel) must make up the exact difference, to the cent.
+        offb = offboarded_summary[win_key]
+        if totals[win_key]["dealsClosed"] != sum(r["dealsClosed"] for r in leaderboard[win_key]) + offb["deals"]:
+            print("RECONCILE FAIL (leaderboard): %s dealsClosed total disagrees with active rows + offboarded" % win_key)
+            sys.exit(1)
+        if totals[win_key]["cashCents"] != sum(r["cashCents"] for r in leaderboard[win_key]) + offb["cashCents"]:
+            print("RECONCILE FAIL (leaderboard): %s cash total disagrees with active rows + offboarded" % win_key)
             sys.exit(1)
         stripe_attributed = sum(stripe["byCloser"][c["key"]][win_key]["cash_cents"] for c in CLOSERS)
         if totals[win_key]["cashCents"] != stripe_attributed:
@@ -364,7 +383,12 @@ def main():
         "timezone": "America/Los_Angeles",
         "generatedAtUtc": now_utc.isoformat(timespec="seconds"),
         "windows": {k: windows[k] for k in WINDOW_KEYS},
-        "roster": [{"key": c["key"], "name": c["name"]} for c in CLOSERS],
+        # Only the active roster is the "team" the dashboard represents; offboarded
+        # closers' historical numbers still count (see audit.offboarded* above), they
+        # just aren't part of "the team" description. Never hardcode a roster size
+        # anywhere that reads this (a 2-person or 5-person team must both just work).
+        "roster": [{"key": c["key"], "name": c["name"]} for c in CLOSERS if c["key"] in ACTIVE_KEYS],
+        "rosterNames": ", ".join(c["name"] for c in CLOSERS if c["key"] in ACTIVE_KEYS),
         "leaderboard": leaderboard,
         "totals": totals,
         "leaders": leaders,
@@ -378,6 +402,9 @@ def main():
             "totalOpportunitiesPulled": pipeline["totalOpportunities"],
             "nonCloserCallsAllTime": calls["reconcile"]["unmatchedClosersCallsAllTime"],
             "unattributedCashAllTime": money(stripe["unattributed"]["allTime"]["cash_cents"]),
+            "offboardedClosers": [c["name"] for c in CLOSERS if c["key"] not in ACTIVE_KEYS],
+            "offboardedCashAllTime": money(offboarded_summary["allTime"]["cashCents"]),
+            "offboardedDealsAllTime": offboarded_summary["allTime"]["deals"],
         },
     }
 

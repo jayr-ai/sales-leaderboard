@@ -362,6 +362,10 @@ function buildAuditBlock() {
     ['Calls all time by non-closer team members (setters, VAs), excluded from the board', a.nonCloserCallsAllTime],
     ['Cash collected all time not yet attributed to a closer', a.unattributedCashAllTime],
   ];
+  if (a.offboardedClosers && a.offboardedClosers.length) {
+    items.push(['Offboarded (' + a.offboardedClosers.join(', ') + '): deals closed, included in team totals but not ranked', a.offboardedDealsAllTime]);
+    items.push(['Offboarded (' + a.offboardedClosers.join(', ') + '): cash collected, included in team totals but not ranked', a.offboardedCashAllTime]);
+  }
   return '<table class="audit"><tbody>' + items.map(([l, v]) =>
     '<tr><td>' + esc(l) + '</td><td class="num">' + esc(v) + '</td></tr>'
   ).join('') + '</tbody></table>';

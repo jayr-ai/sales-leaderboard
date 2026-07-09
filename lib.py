@@ -3,6 +3,7 @@ Single place for facts that must stay identical across build_calls.py, build_pip
 build_stripe.py and build_leaderboard.py, so they can never drift apart.
 """
 import json
+import os
 from datetime import datetime, timedelta, timezone
 
 LOCATION_ID = "61bBcrk5Fi4BuTWwvW0P"
@@ -11,14 +12,24 @@ TZ_NAME = "America/Los_Angeles"
 LA_OFFSET_HOURS = -7  # PDT (America/Los_Angeles daylight time; this account's operating window is northern-hemisphere summer)
 LA = timezone(timedelta(hours=LA_OFFSET_HOURS))
 
-# The three seated closers who own pipeline opportunities. James Wellington is an
-# agency-admin calendar flag, not a seated closer, and is excluded on purpose.
-CLOSERS = [
-    {"id": "KyR0lFZOC0l0GQHM6SLv", "key": "caleb", "name": "Caleb Chase"},
-    {"id": "rHJOq1QChy55u6ZfczJ1", "key": "matthew", "name": "Matthew Burns"},
-    {"id": "Z3WFuyTIWmoZMmzNJrRl", "key": "dan", "name": "Dan Baldasso"},
-]
+# The full closer roster, active and offboarded, lives in roster.json (not here), so
+# onboarding or offboarding a closer is a one-line data edit, never a code change.
+# CLOSERS = everyone who ever held the role, active or not: attribution (matching a
+#   pipeline opp's assignedTo, a call log's userId, a Stripe charge's contact email)
+#   always checks the full roster, so a departed closer's historical numbers are never
+#   silently reclassified as "unowned" the day they're offboarded.
+# ACTIVE_CLOSERS = only status:"active": this is who appears as a ranked row on the
+#   Leaderboard/Scorecard/Leaders strip. build_leaderboard.py folds any offboarded
+#   closer's real historical contribution into team totals, disclosed as its own line
+#   in the audit panel, never silently dropped and never silently hidden.
+# James Wellington is an agency-admin calendar flag, not a seated closer, and was never
+# added to this roster on purpose (same exclusion the AIFS dashboard documents).
+_ROSTER_PATH = os.path.join(os.path.dirname(__file__), "roster.json")
+with open(_ROSTER_PATH, encoding="utf-8") as _f:
+    CLOSERS = json.load(_f)["closers"]
+ACTIVE_CLOSERS = [c for c in CLOSERS if c.get("status") == "active"]
 CLOSER_BY_ID = {c["id"]: c for c in CLOSERS}
+ACTIVE_KEYS = {c["key"] for c in ACTIVE_CLOSERS}
 
 # The business's marketing launch date, same account and same date as the AIFS CRO
 # dashboard. "All time" means since this date, not since the pipeline's oldest record.
