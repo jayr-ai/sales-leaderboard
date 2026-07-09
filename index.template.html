@@ -1,22 +1,32 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sales Leaderboard, Ai Funding Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy: #0F172A; --blue: #3B82F6; --blue-d: #1D4ED8; --ok: #059669; --warn: #B45309; --bad: #DC2626;
     --line: #E2E8F0; --muted: #64748B; --paper: #FFFFFF; --bg: #F8FAFC;
+    --gold: #B78628; --gold-line: rgba(183,134,40,.34); --gold-bg: rgba(183,134,40,.08);
+    --gold-sh1: rgba(183,134,40,.14); --gold-sh2: rgba(183,134,40,.17);
+    --silver: #64748B; --silver-line: rgba(100,116,139,.34); --silver-bg: rgba(100,116,139,.08);
+    --bronze: #B2560A; --bronze-line: rgba(178,86,10,.34); --bronze-bg: rgba(178,86,10,.08);
+    --card-sh: rgba(30,41,59,.04) 0 1px 2px 0, rgba(30,41,59,.07) 0 8px 22px 0;
+    --radius: 18px;
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--navy); font-family: Inter, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
   .wrap { max-width: 1100px; margin: 0 auto; padding: 24px 20px 64px; }
   header { padding: 4px 0 16px; border-bottom: 1px solid var(--line); margin-bottom: 16px; }
-  h1 { font-size: 22px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  h1 { font-family: "Plus Jakarta Sans", Inter, sans-serif; font-size: 34px; font-weight: 300; letter-spacing: -0.02em; margin: 0 0 4px; }
+  h1 b { font-weight: 800; }
   .sub { color: var(--muted); font-size: 13px; }
   .note { color: var(--muted); font-size: 12.5px; margin: 6px 0 0; }
-  h2.sec { font-size: 15px; margin: 28px 0 10px; color: var(--navy); }
-  h3.sub-sec { font-size: 13px; margin: 22px 0 10px; color: var(--navy); }
+  h2.sec { font-family: "Plus Jakarta Sans", Inter, sans-serif; font-size: 16px; font-weight: 700; margin: 28px 0 10px; color: var(--navy); }
+  h3.sub-sec { font-size: 13px; font-weight: 700; margin: 22px 0 10px; color: var(--navy); }
 
-  .career { background: var(--navy); color: #fff; border-radius: 10px; padding: 12px 16px; font-size: 13px; margin-bottom: 18px; }
+  .career { background: linear-gradient(135deg, var(--navy), #1E293B); color: #fff; border-radius: var(--radius); padding: 14px 18px; font-size: 13.5px; margin-bottom: 18px; box-shadow: rgba(15,23,42,.25) 0 8px 24px 0; }
   .career b { font-weight: 700; }
   .career-tag { display: inline-block; background: rgba(255,255,255,0.15); border-radius: 999px; padding: 2px 8px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em; margin-right: 8px; }
 
@@ -33,7 +43,7 @@
   .wpanel.active { display: block; }
   .wlabel { color: var(--muted); font-size: 12.5px; margin-bottom: 8px; }
 
-  .boardwrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+  .boardwrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--card-sh); }
   table.board { width: 100%; min-width: 1080px; border-collapse: collapse; background: var(--paper); font-size: 13px; }
   table.board th, table.board td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
   table.board th { background: #F1F5F9; color: var(--muted); font-weight: 600; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.03em; }
@@ -45,9 +55,9 @@
   table.board tr.totalrow td.foot { color: var(--navy); }
 
   .medal { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: #E2E8F0; color: var(--navy); font-size: 11px; font-weight: 800; }
-  .medal.g { background: #FDE68A; }
-  .medal.s { background: #E5E7EB; }
-  .medal.b { background: #FBCFE8; }
+  .medal.g { background: var(--gold-bg); color: var(--gold); }
+  .medal.s { background: var(--silver-bg); color: var(--silver); }
+  .medal.b { background: var(--bronze-bg); color: var(--bronze); }
 
   .trend-tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 6px; cursor: default; }
   .trend-tag.up { color: var(--ok); background: #ECFDF5; }
@@ -55,20 +65,20 @@
   .trend-tag.flat { color: var(--muted); background: #F1F5F9; }
   .trend-tag.na { color: var(--muted); background: #F1F5F9; font-weight: 600; font-size: 10px; text-transform: uppercase; }
 
-  table.audit { width: 100%; border-collapse: collapse; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; font-size: 13px; }
+  table.audit { width: 100%; border-collapse: collapse; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); font-size: 13px; box-shadow: var(--card-sh); }
   table.audit td { padding: 9px 12px; border-bottom: 1px solid var(--line); color: var(--muted); }
   table.audit tr:last-child td { border-bottom: none; }
   table.audit td.num { text-align: right; font-variant-numeric: tabular-nums; color: var(--navy); font-weight: 600; }
 
   .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-  .tile { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  .tile { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; box-shadow: var(--card-sh); }
   .tile .tv { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
   .tile .tv.ok { color: var(--ok); }
   .tile .tl { color: var(--muted); font-size: 12px; margin-top: 4px; }
 
   .leaders-hd { color: var(--muted); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; margin: 20px 0 8px; }
   .leaders { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-  .leadercard { display: flex; gap: 10px; align-items: flex-start; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+  .leadercard { display: flex; gap: 10px; align-items: flex-start; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; box-shadow: var(--card-sh); }
   .lc-icon { width: 26px; height: 26px; border-radius: 50%; background: #EFF6FF; color: var(--blue-d); font-weight: 800; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .lc-label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.03em; }
   .lc-name { font-weight: 700; font-size: 13.5px; margin-top: 2px; }
@@ -77,7 +87,34 @@
   @media (max-width: 900px) { .tiles, .leaders { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 480px) { .tiles, .leaders { grid-template-columns: 1fr; } }
 
-  .charts .chart { width: 100%; height: auto; display: block; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 4px; }
+  /* Podium cards, Leaderboard page */
+  .podium { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 22px; }
+  .podium-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--card-sh); }
+  .podium-card.g { border-color: var(--gold-line); box-shadow: var(--gold-sh1) 0 4px 12px 0, var(--gold-sh2) 0 20px 48px 0; background: linear-gradient(180deg, var(--gold-bg), transparent 60%), var(--paper); }
+  .podium-card.s { border-color: var(--silver-line); }
+  .podium-card.b { border-color: var(--bronze-line); }
+  .podium-hd { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+  .prank { color: var(--muted); font-weight: 700; font-size: 13px; padding-top: 6px; }
+  .avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--paper); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; flex-shrink: 0; border: 2px solid var(--line); color: var(--navy); }
+  .avatar.g { border-color: var(--gold-line); color: var(--gold); box-shadow: var(--gold-sh1) 0 5px 14px 0; }
+  .avatar.s { border-color: var(--silver-line); color: var(--silver); }
+  .avatar.b { border-color: var(--bronze-line); color: var(--bronze); }
+  .podium-id { flex: 1; min-width: 0; }
+  .podium-name { font-weight: 700; font-size: 15px; }
+  .leading-tag { display: inline-flex; align-items: center; gap: 3px; color: var(--gold); font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+  .chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+  .chip { display: inline-block; background: var(--paper); border: 1px solid var(--gold-line); color: var(--gold); font-size: 9.5px; font-weight: 700; padding: 3px 9px; border-radius: 999px; }
+  .podium-cash { display: flex; justify-content: space-between; align-items: baseline; margin: 10px 0 12px; flex-wrap: wrap; gap: 4px; }
+  .pc-amt { font-family: "Plus Jakarta Sans", Inter, sans-serif; font-size: 26px; font-weight: 700; letter-spacing: -0.01em; }
+  .pc-amt.ok { color: var(--ok); }
+  .pc-note { color: var(--muted); font-size: 12px; }
+  .pstats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; border-top: 1px solid var(--line); padding-top: 12px; }
+  .pstat-v { font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; }
+  .pstat-l { color: var(--muted); font-size: 10.5px; margin-top: 1px; }
+  @media (max-width: 900px) { .podium { grid-template-columns: 1fr; } }
+  @media (max-width: 420px) { .pstats { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
+
+  .charts .chart { width: 100%; height: auto; display: block; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 4px; box-shadow: var(--card-sh); }
   .charthd { color: var(--muted); font-size: 12px; margin: 16px 0 6px; }
 
   .funnel { display: flex; flex-direction: column; gap: 6px; }
@@ -88,7 +125,7 @@
   .fcount { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
   @media (max-width: 640px) { .frow { grid-template-columns: 90px 1fr 32px; font-size: 11.5px; } }
 
-  .callout { font-size: 12.5px; color: var(--muted); background: #F1F5F9; border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin-top: 14px; }
+  .callout { font-size: 12.5px; color: var(--muted); background: #F1F5F9; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin-top: 14px; }
   footer { margin-top: 40px; color: var(--muted); font-size: 11.5px; border-top: 1px solid var(--line); padding-top: 14px; }
   @media (max-width: 640px) {
     .wrap { padding: 16px 12px 48px; }
@@ -97,7 +134,7 @@
 
 <div class="wrap">
   <header>
-    <h1>Sales Leaderboard</h1>
+    <h1>Sales <b>Leaderboard</b></h1>
     <div class="sub">Ai Funding Solutions, closer performance</div>
     <div class="note">Refreshed daily. As of {%asOf%} ({%timezone%}). Generated {%generatedAtUtc%} UTC.</div>
   </header>

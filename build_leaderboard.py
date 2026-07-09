@@ -40,14 +40,55 @@ def trend_note(delta_cash, delta_deals):
     return ", ".join(parts) if parts else "flat vs prior period"
 
 
-def pick_leader(rows, numeric_key, display_key):
-    """Highest numeric_key among rows where it isn't None; ties broken by name. None if empty."""
-    candidates = [r for r in rows if r.get(numeric_key) is not None]
+def pick_leader(rows, numeric_key, display_key, require_positive=False):
+    """Highest numeric_key among rows where it isn't None (and, if require_positive, > 0);
+    ties broken by name. None if no row qualifies."""
+    candidates = [r for r in rows if r.get(numeric_key) is not None and (not require_positive or r[numeric_key] > 0)]
     if not candidates:
         return None
     candidates.sort(key=lambda r: (-r[numeric_key], r["name"]))
     top = candidates[0]
     return {"key": top["key"], "name": top["name"], "value": top[display_key]}
+
+
+def build_badges(row, leaders_win, career_top_cash_key, career_first_deal_keys):
+    """Every badge here is a real, computed condition against already-reconciled numbers,
+    never an invented label. 'Leading'/'Best Show Rate'/etc only fire when there's a real
+    signal (a positive value), so a field of zeros never gets awarded a fake achievement."""
+    badges = []
+    if row["rank"] == 1 and row["cashCents"] > 0:
+        badges.append("Leading")
+    if career_top_cash_key and row["key"] == career_top_cash_key:
+        badges.append("Top Closer")
+    if row["key"] in career_first_deal_keys:
+        badges.append("First Deal")
+    top_show = leaders_win.get("topShowRate")
+    if top_show and row["key"] == top_show["key"] and row["showRateNum"] is not None:
+        badges.append("Best Show Rate")
+    most_active = leaders_win.get("mostActive")
+    if most_active and row["key"] == most_active["key"] and row["totalCalls"] > 0:
+        badges.append("Most Active")
+    top_booked = leaders_win.get("topBooked")
+    if top_booked and row["key"] == top_booked["key"] and row["callsBooked"] > 0:
+        badges.append("Most Booked")
+    return badges
+
+
+def build_gap_note(row, rows_sorted):
+    """Gap-to-next-rank copy, entirely derived from real cash figures already on the row."""
+    if sum(r["cashCents"] for r in rows_sorted) == 0:
+        return "No cash collected yet this window"
+    if row["rank"] == 1:
+        if len(rows_sorted) > 1:
+            gap = row["cashCents"] - rows_sorted[1]["cashCents"]
+            if gap > 0:
+                return "Leading by " + money(gap)
+        return "Setting the pace"
+    leader = rows_sorted[0]
+    gap = leader["cashCents"] - row["cashCents"]
+    if gap > 0:
+        return money(gap) + " to pass " + leader["name"]
+    return "Tied with " + leader["name"]
 
 
 def main():
@@ -143,11 +184,13 @@ def main():
                 "callHours": round(t_seconds / 3600.0, 1),
             }
             leaders[win_key] = {
-                "topCash": pick_leader(rows, "cashCents", "cash"),
+                "topCash": pick_leader(rows, "cashCents", "cash", require_positive=True),
                 "topCloseRate": pick_leader(rows, "closeRateNum", "closeRate"),
                 "topShowRate": pick_leader(rows, "showRateNum", "showRate"),
                 "mostActive": pick_leader(
-                    [dict(r, totalCallsNum=r["totalCalls"]) for r in rows], "totalCallsNum", "totalCalls"),
+                    [dict(r, totalCallsNum=r["totalCalls"]) for r in rows], "totalCallsNum", "totalCalls", require_positive=True),
+                "topBooked": pick_leader(
+                    [dict(r, callsBookedNum=r["callsBooked"]) for r in rows], "callsBookedNum", "callsBooked", require_positive=True),
             }
 
     # Attach trend deltas (day/week/month/quarter only, vs their prev-period counterpart).
@@ -172,6 +215,17 @@ def main():
         totals[win_key]["trendNote"] = trend_note(delta_cash, delta_deals)
     totals["allTime"]["trend"] = "na"
     totals["allTime"]["trendNote"] = "since launch, no prior period"
+
+    # Career-wide (all-time) facts, attached to every window's rows regardless of which
+    # window is being viewed: these are permanent achievements, not window-scoped ones.
+    career_top_cash = leaders["allTime"]["topCash"]
+    career_top_cash_key = career_top_cash["key"] if career_top_cash else None
+    career_first_deal_keys = {r["key"] for r in leaderboard["allTime"] if r["dealsClosed"] > 0}
+
+    for win_key in WINDOW_KEYS:
+        for row in leaderboard[win_key]:
+            row["badges"] = build_badges(row, leaders[win_key], career_top_cash_key, career_first_deal_keys)
+            row["gapNote"] = build_gap_note(row, leaderboard[win_key])
 
     # Reconcile gates, every display window.
     for win_key in WINDOW_KEYS:

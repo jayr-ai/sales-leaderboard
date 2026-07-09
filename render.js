@@ -66,6 +66,48 @@ function medal(rank) {
   return '<span class="medal">' + rank + '</span>';
 }
 
+function rankClass(rank) {
+  return rank === 1 ? 'g' : rank === 2 ? 's' : rank === 3 ? 'b' : '';
+}
+
+function initials(name) {
+  const parts = String(name).trim().split(/\s+/);
+  return ((parts[0] || '')[0] || '') + ((parts[parts.length - 1] || '')[0] || '');
+}
+
+function buildBadgeChips(badges) {
+  if (!badges || !badges.length) return '';
+  return '<div class="chips">' + badges.map(b => '<span class="chip">' + esc(b) + '</span>').join('') + '</div>';
+}
+
+const PODIUM_STATS = [
+  { k: 'dealsClosed', label: 'Deals closed' },
+  { k: 'callsBooked', label: 'Calls booked' },
+  { k: 'showRate', label: 'Show rate' },
+  { k: 'closeRate', label: 'Close rate' },
+];
+
+function buildPodiumCard(row) {
+  const rc = rankClass(row.rank);
+  const stats = PODIUM_STATS.map(s =>
+    '<div class="pstat"><div class="pstat-v">' + esc(row[s.k]) + '</div><div class="pstat-l">' + esc(s.label) + '</div></div>'
+  ).join('');
+  return '<article class="podium-card ' + rc + '">' +
+    '<div class="podium-hd">' +
+    '<span class="prank">' + row.rank + '</span>' +
+    '<span class="avatar ' + rc + '">' + esc(initials(row.name)) + '</span>' +
+    '<div class="podium-id"><div class="podium-name">' + esc(row.name) +
+    (row.rank === 1 && row.cashCents > 0 ? ' <span class="leading-tag">Leading</span>' : '') + '</div>' +
+    buildBadgeChips((row.badges || []).filter(b => b !== 'Leading')) +
+    '</div>' +
+    trendBadge(row.trend, row.trendNote) +
+    '</div>' +
+    '<div class="podium-cash"><span class="pc-amt ' + (row.cashCents > 0 ? 'ok' : '') + '">' + esc(row.cash) + '</span>' +
+    '<span class="pc-note">' + esc(row.gapNote) + '</span></div>' +
+    '<div class="pstats">' + stats + '</div>' +
+    '</article>';
+}
+
 function trendBadge(trend, note) {
   if (trend === 'na') return '<span class="trend-tag na">career</span>';
   const glyph = trend === 'up' ? '&#9650;' : trend === 'down' ? '&#9660;' : '&#9679;';
@@ -135,12 +177,16 @@ function buildScorecardBlock() {
 }
 
 function buildLeaderboardBlock() {
-  return WINS.map(w =>
-    '<div class="wpanel' + (w.key === DEFAULT_WIN ? ' active' : '') + '" data-win="' + w.key + '">' +
-    '<div class="wlabel">' + esc(d.windows[w.key].label) + '</div>' +
-    buildTable(d.leaderboard[w.key], d.totals[w.key]) +
-    '</div>'
-  ).join('\n');
+  return WINS.map(w => {
+    const rows = d.leaderboard[w.key];
+    const podium = rows.map(buildPodiumCard).join('');
+    return '<div class="wpanel' + (w.key === DEFAULT_WIN ? ' active' : '') + '" data-win="' + w.key + '">' +
+      '<div class="wlabel">' + esc(d.windows[w.key].label) + '</div>' +
+      '<div class="podium">' + podium + '</div>' +
+      '<h3 class="sub-sec">Full detail</h3>' +
+      buildTable(rows, d.totals[w.key]) +
+      '</div>';
+  }).join('\n');
 }
 
 function buildCareerBanner() {

@@ -1,7 +1,7 @@
 {
   "asOf": "2026-07-08",
   "timezone": "America/Los_Angeles",
-  "generatedAtUtc": "2026-07-09T01:33:23+00:00",
+  "generatedAtUtc": "2026-07-09T01:59:39+00:00",
   "windows": {
     "day": {
       "start": "2026-07-08",
@@ -66,7 +66,15 @@
         "callHours": 0.4,
         "rank": 1,
         "trend": "flat",
-        "trendNote": "flat vs prior period"
+        "trendNote": "flat vs prior period",
+        "badges": [
+          "Top Closer",
+          "First Deal",
+          "Best Show Rate",
+          "Most Active",
+          "Most Booked"
+        ],
+        "gapNote": "No cash collected yet this window"
       },
       {
         "key": "dan",
@@ -89,7 +97,9 @@
         "callHours": 0.0,
         "rank": 2,
         "trend": "flat",
-        "trendNote": "flat vs prior period"
+        "trendNote": "flat vs prior period",
+        "badges": [],
+        "gapNote": "No cash collected yet this window"
       },
       {
         "key": "matthew",
@@ -112,7 +122,9 @@
         "callHours": 0.0,
         "rank": 3,
         "trend": "flat",
-        "trendNote": "flat vs prior period"
+        "trendNote": "flat vs prior period",
+        "badges": [],
+        "gapNote": "No cash collected yet this window"
       }
     ],
     "week": [
@@ -137,7 +149,14 @@
         "callHours": 0.5,
         "rank": 1,
         "trend": "down",
-        "trendNote": "-$4,997.00, -1 deal"
+        "trendNote": "-$4,997.00, -1 deal",
+        "badges": [
+          "Top Closer",
+          "First Deal",
+          "Most Active",
+          "Most Booked"
+        ],
+        "gapNote": "No cash collected yet this window"
       },
       {
         "key": "dan",
@@ -160,7 +179,11 @@
         "callHours": 0.0,
         "rank": 2,
         "trend": "flat",
-        "trendNote": "flat vs prior period"
+        "trendNote": "flat vs prior period",
+        "badges": [
+          "Best Show Rate"
+        ],
+        "gapNote": "No cash collected yet this window"
       },
       {
         "key": "matthew",
@@ -183,7 +206,9 @@
         "callHours": 0.0,
         "rank": 3,
         "trend": "flat",
-        "trendNote": "flat vs prior period"
+        "trendNote": "flat vs prior period",
+        "badges": [],
+        "gapNote": "No cash collected yet this window"
       }
     ],
     "month": [
@@ -208,7 +233,14 @@
         "callHours": 0.6,
         "rank": 1,
         "trend": "down",
-        "trendNote": "-$4,997.00, -1 deal"
+        "trendNote": "-$4,997.00, -1 deal",
+        "badges": [
+          "Top Closer",
+          "First Deal",
+          "Most Active",
+          "Most Booked"
+        ],
+        "gapNote": "No cash collected yet this window"
       },
       {
         "key": "dan",
@@ -231,7 +263,11 @@
         "callHours": 0.0,
         "rank": 2,
         "trend": "flat",
-        "trendNote": "flat vs prior period"
+        "trendNote": "flat vs prior period",
+        "badges": [
+          "Best Show Rate"
+        ],
+        "gapNote": "No cash collected yet this window"
       },
       {
         "key": "matthew",
@@ -254,7 +290,9 @@
         "callHours": 0.0,
         "rank": 3,
         "trend": "flat",
-        "trendNote": "flat vs prior period"
+        "trendNote": "flat vs prior period",
+        "badges": [],
+        "gapNote": "No cash collected yet this window"
       }
     ],
     "quarter": [
@@ -279,7 +317,14 @@
         "callHours": 0.6,
         "rank": 1,
         "trend": "down",
-        "trendNote": "-$4,997.00, -1 deal"
+        "trendNote": "-$4,997.00, -1 deal",
+        "badges": [
+          "Top Closer",
+          "First Deal",
+          "Most Active",
+          "Most Booked"
+        ],
+        "gapNote": "No cash collected yet this window"
       },
       {
         "key": "dan",
@@ -302,7 +347,11 @@
         "callHours": 0.0,
         "rank": 2,
         "trend": "flat",
-        "trendNote": "flat vs prior period"
+        "trendNote": "flat vs prior period",
+        "badges": [
+          "Best Show Rate"
+        ],
+        "gapNote": "No cash collected yet this window"
       },
       {
         "key": "matthew",
@@ -325,7 +374,9 @@
         "callHours": 0.0,
         "rank": 3,
         "trend": "flat",
-        "trendNote": "flat vs prior period"
+        "trendNote": "flat vs prior period",
+        "badges": [],
+        "gapNote": "No cash collected yet this window"
       }
     ],
     "allTime": [
@@ -350,7 +401,15 @@
         "callHours": 1.0,
         "rank": 1,
         "trend": "na",
-        "trendNote": "since launch, no prior period"
+        "trendNote": "since launch, no prior period",
+        "badges": [
+          "Leading",
+          "Top Closer",
+          "First Deal",
+          "Most Active",
+          "Most Booked"
+        ],
+        "gapNote": "Leading by $4,997.00"
       },
       {
         "key": "dan",
@@ -373,7 +432,11 @@
         "callHours": 0.2,
         "rank": 2,
         "trend": "na",
-        "trendNote": "since launch, no prior period"
+        "trendNote": "since launch, no prior period",
+        "badges": [
+          "Best Show Rate"
+        ],
+        "gapNote": "$4,997.00 to pass Caleb Chase"
       },
       {
         "key": "matthew",
@@ -396,7 +459,9 @@
         "callHours": 0.0,
         "rank": 3,
         "trend": "na",
-        "trendNote": "since launch, no prior period"
+        "trendNote": "since launch, no prior period",
+        "badges": [],
+        "gapNote": "$4,997.00 to pass Caleb Chase"
       }
     ]
   },
@@ -494,11 +559,7 @@
   },
   "leaders": {
     "day": {
-      "topCash": {
-        "key": "caleb",
-        "name": "Caleb Chase",
-        "value": "$0.00"
-      },
+      "topCash": null,
       "topCloseRate": {
         "key": "caleb",
         "name": "Caleb Chase",
@@ -513,14 +574,15 @@
         "key": "caleb",
         "name": "Caleb Chase",
         "value": 7
+      },
+      "topBooked": {
+        "key": "caleb",
+        "name": "Caleb Chase",
+        "value": 10
       }
     },
     "week": {
-      "topCash": {
-        "key": "caleb",
-        "name": "Caleb Chase",
-        "value": "$0.00"
-      },
+      "topCash": null,
       "topCloseRate": {
         "key": "caleb",
         "name": "Caleb Chase",
@@ -535,14 +597,15 @@
         "key": "caleb",
         "name": "Caleb Chase",
         "value": 17
+      },
+      "topBooked": {
+        "key": "caleb",
+        "name": "Caleb Chase",
+        "value": 46
       }
     },
     "month": {
-      "topCash": {
-        "key": "caleb",
-        "name": "Caleb Chase",
-        "value": "$0.00"
-      },
+      "topCash": null,
       "topCloseRate": {
         "key": "caleb",
         "name": "Caleb Chase",
@@ -557,14 +620,15 @@
         "key": "caleb",
         "name": "Caleb Chase",
         "value": 32
+      },
+      "topBooked": {
+        "key": "caleb",
+        "name": "Caleb Chase",
+        "value": 47
       }
     },
     "quarter": {
-      "topCash": {
-        "key": "caleb",
-        "name": "Caleb Chase",
-        "value": "$0.00"
-      },
+      "topCash": null,
       "topCloseRate": {
         "key": "caleb",
         "name": "Caleb Chase",
@@ -579,6 +643,11 @@
         "key": "caleb",
         "name": "Caleb Chase",
         "value": 32
+      },
+      "topBooked": {
+        "key": "caleb",
+        "name": "Caleb Chase",
+        "value": 47
       }
     },
     "allTime": {
@@ -601,6 +670,11 @@
         "key": "caleb",
         "name": "Caleb Chase",
         "value": 46
+      },
+      "topBooked": {
+        "key": "caleb",
+        "name": "Caleb Chase",
+        "value": 48
       }
     }
   },
