@@ -14,8 +14,8 @@
   .sub { color: var(--muted); font-size: 13px; }
   .note { color: var(--muted); font-size: 12.5px; margin: 6px 0 0; }
   h2.sec { font-size: 15px; margin: 28px 0 10px; color: var(--navy); }
-  .wtabs { display: flex; gap: 6px; margin-bottom: 14px; }
-  .wtab { border: 1px solid var(--line); background: var(--paper); color: var(--navy); padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; }
+  .wtabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+  .wtab { border: 1px solid var(--line); background: var(--paper); color: var(--navy); padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; white-space: nowrap; }
   .wtab.active { background: var(--navy); border-color: var(--navy); color: #fff; }
   .wpanel { display: none; }
   .wpanel.active { display: block; }
@@ -38,6 +38,13 @@
   table.audit td { padding: 9px 12px; border-bottom: 1px solid var(--line); color: var(--muted); }
   table.audit tr:last-child td { border-bottom: none; }
   table.audit td.num { text-align: right; font-variant-numeric: tabular-nums; color: var(--navy); font-weight: 600; }
+  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .tile { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  .tile .tv { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+  .tile .tv.ok { color: var(--ok); }
+  .tile .tl { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  @media (max-width: 900px) { .tiles { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .tiles { grid-template-columns: 1fr; } }
   .callout { font-size: 12.5px; color: var(--muted); background: #F1F5F9; border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin-top: 14px; }
   footer { margin-top: 40px; color: var(--muted); font-size: 11.5px; border-top: 1px solid var(--line); padding-top: 14px; }
   @media (max-width: 640px) {
@@ -52,11 +59,14 @@
     <div class="note">Refreshed daily. As of {%asOf%} ({%timezone%}). Generated {%generatedAtUtc%} UTC.</div>
   </header>
 
+  <h2 class="sec">Team performance</h2>
+  <!--SCORECARD_START--><!--SCORECARD_END-->
+
   <h2 class="sec">Ranked by cash collected, then deals closed</h2>
   <!--LEADERBOARD_START--><!--LEADERBOARD_END-->
 
   <div class="callout">
-    Deals closed and cash collected are counted the day the sale closes in the pipeline and the day Stripe settles the charge, so short windows can read zero even when calls are active, a sale can take weeks to close. Calls booked, held and no show are counted by the date each call's outcome was last updated on the pipeline board, not the date it was originally scheduled, GHL does not expose a full stage history. Show = calls held plus everything that progressed further (high priority, closed won). Cash is always the real Stripe figure, never GHL's flat close-won stamp. Outbound, inbound and call hours count only this closer's own dialed calls, setter and admin dialing is tracked separately and excluded from these three columns.
+    Deals closed and cash collected are counted the day the sale closes in the pipeline and the day Stripe settles the charge, so short windows can read zero even when calls are active, a sale can take weeks to close. Calls booked, held and no show are counted by the date each call's outcome was last updated on the pipeline board, not the date it was originally scheduled, GHL does not expose a full stage history. Show = calls held plus everything that progressed further (high priority, closed won). Cash is always the real Stripe figure, never GHL's flat close-won stamp. Outbound, inbound and call hours count only this closer's own dialed calls, setter and admin dialing is tracked separately and excluded from these three columns. All time means since the business launched on {%windows.allTime.start%}.
   </div>
 
   <h2 class="sec">Data audit</h2>

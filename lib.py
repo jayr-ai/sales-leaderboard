@@ -20,6 +20,12 @@ CLOSERS = [
 ]
 CLOSER_BY_ID = {c["id"]: c for c in CLOSERS}
 
+# The business's marketing launch date, same account and same date as the AIFS CRO
+# dashboard. "All time" means since this date, not since the pipeline's oldest record.
+LAUNCH_DATE = "2026-06-15"
+
+WINDOW_KEYS = ("day", "week", "month", "quarter", "allTime")
+
 STAGE_MAP = {
     "b9bfc681-76ef-4402-a7b8-428e39788582": "newUnworked",
     "910d1097-8955-4f62-9c79-eaafc3963a22": "contacted",
@@ -98,17 +104,28 @@ def load_calls(paths):
 def compute_windows(now_utc):
     """Given the current aware UTC datetime, return LA-local calendar window boundaries.
     Day = today. Week = this calendar week, Monday to Sunday. Month = this calendar month.
+    Quarter = this calendar quarter. AllTime = since the business launch date.
     All bounds are inclusive date strings (YYYY-MM-DD) in America/Los_Angeles.
     """
     today = now_utc.astimezone(LA).date()
     week_start = today - timedelta(days=today.weekday())  # Monday
     week_end = week_start + timedelta(days=6)
     month_start = today.replace(day=1)
-    if today.month == 12:
-        next_month = today.replace(year=today.year + 1, month=1, day=1)
-    else:
-        next_month = today.replace(month=today.month + 1, day=1)
-    month_end = next_month - timedelta(days=1)
+
+    def add_month(d, n):
+        m = d.month - 1 + n
+        y = d.year + m // 12
+        m = m % 12 + 1
+        return d.replace(year=y, month=m, day=1)
+
+    month_end = add_month(month_start, 1) - timedelta(days=1)
+
+    quarter_start_month = ((today.month - 1) // 3) * 3 + 1
+    quarter_start = today.replace(month=quarter_start_month, day=1)
+    quarter_end = add_month(quarter_start, 3) - timedelta(days=1)
+    quarter_num = quarter_start_month // 3 + 1
+
+    launch = datetime.strptime(LAUNCH_DATE, "%Y-%m-%d").date()
 
     def fmt(d):
         return "{} {}".format(d.strftime("%b"), d.day)
@@ -120,6 +137,10 @@ def compute_windows(now_utc):
                  "label": "{} - {}".format(fmt(week_start), fmt(week_end))},
         "month": {"start": month_start.isoformat(), "end": month_end.isoformat(),
                   "label": today.strftime("%B %Y")},
+        "quarter": {"start": quarter_start.isoformat(), "end": quarter_end.isoformat(),
+                    "label": "Q{} {}".format(quarter_num, today.year)},
+        "allTime": {"start": launch.isoformat(), "end": today.isoformat(),
+                    "label": "Since launch, {}".format(fmt(launch))},
     }
 
 

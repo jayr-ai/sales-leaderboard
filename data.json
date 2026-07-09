@@ -1,7 +1,7 @@
 {
   "asOf": "2026-07-08",
   "timezone": "America/Los_Angeles",
-  "generatedAtUtc": "2026-07-09T00:29:18+00:00",
+  "generatedAtUtc": "2026-07-09T01:10:08+00:00",
   "windows": {
     "day": {
       "start": "2026-07-08",
@@ -17,6 +17,16 @@
       "start": "2026-07-01",
       "end": "2026-07-31",
       "label": "July 2026"
+    },
+    "quarter": {
+      "start": "2026-07-01",
+      "end": "2026-09-30",
+      "label": "Q3 2026"
+    },
+    "allTime": {
+      "start": "2026-06-15",
+      "end": "2026-07-08",
+      "label": "Since launch, Jun 15"
     }
   },
   "roster": [
@@ -210,12 +220,131 @@
         "callHours": 0.0,
         "rank": 3
       }
+    ],
+    "quarter": [
+      {
+        "key": "caleb",
+        "name": "Caleb Chase",
+        "dealsClosed": 0,
+        "cash": "$0.00",
+        "cashCents": 0,
+        "callsBooked": 47,
+        "callsHeld": 0,
+        "noShow": 12,
+        "noShowRate": "75%",
+        "showed": 4,
+        "showRate": "25%",
+        "closeRate": "0%",
+        "outboundCalls": 31,
+        "inboundCalls": 1,
+        "totalCalls": 32,
+        "callHours": 0.6,
+        "rank": 1
+      },
+      {
+        "key": "dan",
+        "name": "Dan Baldasso",
+        "dealsClosed": 0,
+        "cash": "$0.00",
+        "cashCents": 0,
+        "callsBooked": 11,
+        "callsHeld": 0,
+        "noShow": 4,
+        "noShowRate": "50%",
+        "showed": 4,
+        "showRate": "50%",
+        "closeRate": "0%",
+        "outboundCalls": 18,
+        "inboundCalls": 1,
+        "totalCalls": 19,
+        "callHours": 0.0,
+        "rank": 2
+      },
+      {
+        "key": "matthew",
+        "name": "Matthew Burns",
+        "dealsClosed": 0,
+        "cash": "$0.00",
+        "cashCents": 0,
+        "callsBooked": 9,
+        "callsHeld": 1,
+        "noShow": 4,
+        "noShowRate": "80%",
+        "showed": 1,
+        "showRate": "20%",
+        "closeRate": "0%",
+        "outboundCalls": 8,
+        "inboundCalls": 0,
+        "totalCalls": 8,
+        "callHours": 0.0,
+        "rank": 3
+      }
+    ],
+    "allTime": [
+      {
+        "key": "caleb",
+        "name": "Caleb Chase",
+        "dealsClosed": 1,
+        "cash": "$4,997.00",
+        "cashCents": 499700,
+        "callsBooked": 48,
+        "callsHeld": 0,
+        "noShow": 12,
+        "noShowRate": "71%",
+        "showed": 5,
+        "showRate": "29%",
+        "closeRate": "20%",
+        "outboundCalls": 41,
+        "inboundCalls": 5,
+        "totalCalls": 46,
+        "callHours": 1.0,
+        "rank": 1
+      },
+      {
+        "key": "dan",
+        "name": "Dan Baldasso",
+        "dealsClosed": 0,
+        "cash": "$0.00",
+        "cashCents": 0,
+        "callsBooked": 14,
+        "callsHeld": 0,
+        "noShow": 6,
+        "noShowRate": "55%",
+        "showed": 5,
+        "showRate": "45%",
+        "closeRate": "0%",
+        "outboundCalls": 26,
+        "inboundCalls": 1,
+        "totalCalls": 27,
+        "callHours": 0.2,
+        "rank": 2
+      },
+      {
+        "key": "matthew",
+        "name": "Matthew Burns",
+        "dealsClosed": 0,
+        "cash": "$0.00",
+        "cashCents": 0,
+        "callsBooked": 13,
+        "callsHeld": 2,
+        "noShow": 7,
+        "noShowRate": "78%",
+        "showed": 2,
+        "showRate": "22%",
+        "closeRate": "0%",
+        "outboundCalls": 9,
+        "inboundCalls": 0,
+        "totalCalls": 9,
+        "callHours": 0.0,
+        "rank": 3
+      }
     ]
   },
   "totals": {
     "day": {
       "dealsClosed": 0,
       "cash": "$0.00",
+      "cashCents": 0,
       "callsBooked": 13,
       "callsHeld": 0,
       "noShow": 2,
@@ -231,6 +360,7 @@
     "week": {
       "dealsClosed": 0,
       "cash": "$0.00",
+      "cashCents": 0,
       "callsBooked": 57,
       "callsHeld": 0,
       "noShow": 15,
@@ -246,6 +376,7 @@
     "month": {
       "dealsClosed": 0,
       "cash": "$0.00",
+      "cashCents": 0,
       "callsBooked": 67,
       "callsHeld": 1,
       "noShow": 20,
@@ -257,14 +388,44 @@
       "inboundCalls": 2,
       "totalCalls": 59,
       "callHours": 0.7
+    },
+    "quarter": {
+      "dealsClosed": 0,
+      "cash": "$0.00",
+      "cashCents": 0,
+      "callsBooked": 67,
+      "callsHeld": 1,
+      "noShow": 20,
+      "noShowRate": "69%",
+      "showed": 9,
+      "showRate": "31%",
+      "closeRate": "0%",
+      "outboundCalls": 57,
+      "inboundCalls": 2,
+      "totalCalls": 59,
+      "callHours": 0.7
+    },
+    "allTime": {
+      "dealsClosed": 1,
+      "cash": "$4,997.00",
+      "cashCents": 499700,
+      "callsBooked": 75,
+      "callsHeld": 2,
+      "noShow": 25,
+      "noShowRate": "68%",
+      "showed": 12,
+      "showRate": "32%",
+      "closeRate": "8%",
+      "outboundCalls": 76,
+      "inboundCalls": 6,
+      "totalCalls": 82,
+      "callHours": 1.2
     }
   },
   "audit": {
     "excludedTestRecords": 8,
     "totalOpportunitiesPulled": 198,
-    "nonCloserCallsThisMonth": 38,
-    "unattributedCashMonth": "$0.00",
-    "unattributedCashWeek": "$0.00",
-    "unattributedCashDay": "$0.00"
+    "nonCloserCallsAllTime": 75,
+    "unattributedCashAllTime": "$0.00"
   }
 }

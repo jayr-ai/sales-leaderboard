@@ -9,7 +9,7 @@ import json
 import sys
 from datetime import datetime, timezone
 
-from lib import CLOSERS, money, pct, rate2
+from lib import CLOSERS, WINDOW_KEYS, money, pct
 
 
 def load(name):
@@ -36,7 +36,7 @@ def main():
 
     leaderboard = {}
     totals = {}
-    for win_key in ("day", "week", "month"):
+    for win_key in WINDOW_KEYS:
         rows = []
         t_deals = t_cash = t_booked = t_held = t_noshow = t_showed = t_out = t_in = 0
         t_seconds = 0
@@ -90,6 +90,7 @@ def main():
         totals[win_key] = {
             "dealsClosed": t_deals,
             "cash": money(t_cash),
+            "cashCents": t_cash,
             "callsBooked": t_booked,
             "callsHeld": t_held,
             "noShow": t_noshow,
@@ -104,14 +105,23 @@ def main():
         }
 
     # Reconcile gate: leaderboard totals must equal the totals independently summed above,
-    # AND the month totals must equal the raw partials' own reconcile figures.
-    if totals["month"]["dealsClosed"] != sum(r["dealsClosed"] for r in leaderboard["month"]):
-        print("RECONCILE FAIL (leaderboard): month dealsClosed total disagrees with row sum")
-        sys.exit(1)
-    stripe_month_attributed = sum(stripe["byCloser"][c["key"]]["month"]["cash_cents"] for c in CLOSERS)
-    if totals["month"]["cash"] != money(stripe_month_attributed):
-        print("RECONCILE FAIL (leaderboard): month cash total disagrees with stripe partial")
-        sys.exit(1)
+    # for every window, not just one.
+    for win_key in WINDOW_KEYS:
+        if totals[win_key]["dealsClosed"] != sum(r["dealsClosed"] for r in leaderboard[win_key]):
+            print("RECONCILE FAIL (leaderboard): %s dealsClosed total disagrees with row sum" % win_key)
+            sys.exit(1)
+        stripe_attributed = sum(stripe["byCloser"][c["key"]][win_key]["cash_cents"] for c in CLOSERS)
+        if totals[win_key]["cashCents"] != stripe_attributed:
+            print("RECONCILE FAIL (leaderboard): %s cash total disagrees with stripe partial" % win_key)
+            sys.exit(1)
+        # allTime is the superset window; every other window's totals can never exceed it.
+        if win_key != "allTime":
+            if totals[win_key]["dealsClosed"] > totals["allTime"]["dealsClosed"]:
+                print("RECONCILE FAIL (leaderboard): %s dealsClosed exceeds allTime" % win_key)
+                sys.exit(1)
+            if totals[win_key]["callsBooked"] > totals["allTime"]["callsBooked"]:
+                print("RECONCILE FAIL (leaderboard): %s callsBooked exceeds allTime" % win_key)
+                sys.exit(1)
 
     data = {
         "asOf": windows["day"]["start"],
@@ -124,17 +134,15 @@ def main():
         "audit": {
             "excludedTestRecords": pipeline["excludedTestRecords"],
             "totalOpportunitiesPulled": pipeline["totalOpportunities"],
-            "nonCloserCallsThisMonth": calls["reconcile"]["unmatchedClosersCallsInMonth"],
-            "unattributedCashMonth": money(stripe["unattributed"]["month"]["cash_cents"]),
-            "unattributedCashWeek": money(stripe["unattributed"]["week"]["cash_cents"]),
-            "unattributedCashDay": money(stripe["unattributed"]["day"]["cash_cents"]),
+            "nonCloserCallsAllTime": calls["reconcile"]["unmatchedClosersCallsAllTime"],
+            "unattributedCashAllTime": money(stripe["unattributed"]["allTime"]["cash_cents"]),
         },
     }
 
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
-    print("OK data.json written. asOf=%s month totals: deals=%d cash=%s calls=%d" % (
-        data["asOf"], totals["month"]["dealsClosed"], totals["month"]["cash"], totals["month"]["totalCalls"]))
+    print("OK data.json written. asOf=%s all-time totals: deals=%d cash=%s calls=%d" % (
+        data["asOf"], totals["allTime"]["dealsClosed"], totals["allTime"]["cash"], totals["allTime"]["totalCalls"]))
 
 
 if __name__ == "__main__":
