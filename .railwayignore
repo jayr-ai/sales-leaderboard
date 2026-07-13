@@ -1,0 +1,6 @@
+node_modules
+raw
+*.partial.json
+*.md
+.railway
+.git
