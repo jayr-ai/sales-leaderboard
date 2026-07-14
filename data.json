@@ -1,7 +1,7 @@
 {
   "asOf": "2026-07-13",
   "timezone": "America/Los_Angeles",
-  "generatedAtUtc": "2026-07-13T21:37:55+00:00",
+  "generatedAtUtc": "2026-07-14T00:20:11+00:00",
   "windows": {
     "day": {
       "start": "2026-07-13",
@@ -50,33 +50,34 @@
         "key": "caleb",
         "name": "Caleb Chase",
         "status": "active",
-        "dealsClosed": 0,
-        "cash": "$0.00",
-        "cashCents": 0,
-        "callsBooked": 4,
+        "dealsClosed": 2,
+        "cash": "$1,994.00",
+        "cashCents": 199400,
+        "callsBooked": 9,
         "callsHeld": 0,
         "noShow": 1,
-        "noShowRate": "50%",
-        "showed": 1,
-        "showRate": "50%",
-        "showRateNum": 50.0,
-        "closeRate": "0%",
-        "closeRateNum": 0.0,
-        "outboundCalls": 9,
-        "inboundCalls": 1,
-        "totalCalls": 10,
-        "callHours": 0.1,
+        "noShowRate": "25%",
+        "showed": 3,
+        "showRate": "75%",
+        "showRateNum": 75.0,
+        "closeRate": "67%",
+        "closeRateNum": 66.66666666666667,
+        "outboundCalls": 36,
+        "inboundCalls": 3,
+        "totalCalls": 39,
+        "callHours": 0.4,
         "rank": 1,
-        "trend": "flat",
-        "trendNote": "flat vs prior period",
+        "trend": "up",
+        "trendNote": "+$1,994.00, +2 deals",
         "badges": [
+          "Leading",
           "Top Closer",
           "First Deal",
           "Best Show Rate",
           "Most Active",
           "Most Booked"
         ],
-        "gapNote": "No cash collected yet this window"
+        "gapNote": "Leading by $1,994.00"
       },
       {
         "key": "carlos",
@@ -94,15 +95,15 @@
         "showRateNum": null,
         "closeRate": "awaiting",
         "closeRateNum": null,
-        "outboundCalls": 2,
+        "outboundCalls": 6,
         "inboundCalls": 0,
-        "totalCalls": 2,
+        "totalCalls": 6,
         "callHours": 0.0,
         "rank": 2,
         "trend": "flat",
         "trendNote": "flat vs prior period",
         "badges": [],
-        "gapNote": "No cash collected yet this window"
+        "gapNote": "$1,994.00 to pass Caleb Chase"
       },
       {
         "key": "james",
@@ -128,7 +129,7 @@
         "trend": "flat",
         "trendNote": "flat vs prior period",
         "badges": [],
-        "gapNote": "No cash collected yet this window"
+        "gapNote": "$1,994.00 to pass Caleb Chase"
       }
     ],
     "week": [
@@ -136,33 +137,34 @@
         "key": "caleb",
         "name": "Caleb Chase",
         "status": "active",
-        "dealsClosed": 0,
-        "cash": "$0.00",
-        "cashCents": 0,
-        "callsBooked": 4,
+        "dealsClosed": 2,
+        "cash": "$1,994.00",
+        "cashCents": 199400,
+        "callsBooked": 9,
         "callsHeld": 0,
         "noShow": 1,
-        "noShowRate": "50%",
-        "showed": 1,
-        "showRate": "50%",
-        "showRateNum": 50.0,
-        "closeRate": "0%",
-        "closeRateNum": 0.0,
-        "outboundCalls": 9,
-        "inboundCalls": 1,
-        "totalCalls": 10,
-        "callHours": 0.1,
+        "noShowRate": "25%",
+        "showed": 3,
+        "showRate": "75%",
+        "showRateNum": 75.0,
+        "closeRate": "67%",
+        "closeRateNum": 66.66666666666667,
+        "outboundCalls": 36,
+        "inboundCalls": 3,
+        "totalCalls": 39,
+        "callHours": 0.4,
         "rank": 1,
-        "trend": "flat",
-        "trendNote": "flat vs prior period",
+        "trend": "up",
+        "trendNote": "+$1,994.00, +2 deals",
         "badges": [
+          "Leading",
           "Top Closer",
           "First Deal",
           "Best Show Rate",
           "Most Active",
           "Most Booked"
         ],
-        "gapNote": "No cash collected yet this window"
+        "gapNote": "Leading by $1,994.00"
       },
       {
         "key": "carlos",
@@ -180,15 +182,15 @@
         "showRateNum": null,
         "closeRate": "awaiting",
         "closeRateNum": null,
-        "outboundCalls": 2,
+        "outboundCalls": 6,
         "inboundCalls": 0,
-        "totalCalls": 2,
+        "totalCalls": 6,
         "callHours": 0.0,
         "rank": 2,
         "trend": "flat",
         "trendNote": "flat vs prior period",
         "badges": [],
-        "gapNote": "No cash collected yet this window"
+        "gapNote": "$1,994.00 to pass Caleb Chase"
       },
       {
         "key": "james",
@@ -214,7 +216,7 @@
         "trend": "flat",
         "trendNote": "flat vs prior period",
         "badges": [],
-        "gapNote": "No cash collected yet this window"
+        "gapNote": "$1,994.00 to pass Caleb Chase"
       }
     ],
     "month": [
@@ -222,32 +224,33 @@
         "key": "caleb",
         "name": "Caleb Chase",
         "status": "active",
-        "dealsClosed": 0,
-        "cash": "$0.00",
-        "cashCents": 0,
-        "callsBooked": 66,
+        "dealsClosed": 2,
+        "cash": "$1,994.00",
+        "cashCents": 199400,
+        "callsBooked": 67,
         "callsHeld": 0,
         "noShow": 21,
         "noShowRate": "55%",
         "showed": 17,
         "showRate": "45%",
         "showRateNum": 44.73684210526316,
-        "closeRate": "0%",
-        "closeRateNum": 0.0,
-        "outboundCalls": 70,
-        "inboundCalls": 9,
-        "totalCalls": 79,
-        "callHours": 2.5,
+        "closeRate": "12%",
+        "closeRateNum": 11.764705882352942,
+        "outboundCalls": 97,
+        "inboundCalls": 11,
+        "totalCalls": 108,
+        "callHours": 2.8,
         "rank": 1,
         "trend": "down",
-        "trendNote": "-$4,997.00, -1 deal",
+        "trendNote": "-$3,003.00, +1 deal",
         "badges": [
+          "Leading",
           "Top Closer",
           "First Deal",
           "Most Active",
           "Most Booked"
         ],
-        "gapNote": "No cash collected yet this window"
+        "gapNote": "Leading by $1,994.00"
       },
       {
         "key": "carlos",
@@ -265,9 +268,9 @@
         "showRateNum": 53.84615384615385,
         "closeRate": "0%",
         "closeRateNum": 0.0,
-        "outboundCalls": 4,
+        "outboundCalls": 8,
         "inboundCalls": 0,
-        "totalCalls": 4,
+        "totalCalls": 8,
         "callHours": 0.0,
         "rank": 2,
         "trend": "flat",
@@ -275,7 +278,7 @@
         "badges": [
           "Best Show Rate"
         ],
-        "gapNote": "No cash collected yet this window"
+        "gapNote": "$1,994.00 to pass Caleb Chase"
       },
       {
         "key": "james",
@@ -301,7 +304,7 @@
         "trend": "flat",
         "trendNote": "flat vs prior period",
         "badges": [],
-        "gapNote": "No cash collected yet this window"
+        "gapNote": "$1,994.00 to pass Caleb Chase"
       }
     ],
     "quarter": [
@@ -309,32 +312,33 @@
         "key": "caleb",
         "name": "Caleb Chase",
         "status": "active",
-        "dealsClosed": 0,
-        "cash": "$0.00",
-        "cashCents": 0,
-        "callsBooked": 66,
+        "dealsClosed": 2,
+        "cash": "$1,994.00",
+        "cashCents": 199400,
+        "callsBooked": 67,
         "callsHeld": 0,
         "noShow": 21,
         "noShowRate": "55%",
         "showed": 17,
         "showRate": "45%",
         "showRateNum": 44.73684210526316,
-        "closeRate": "0%",
-        "closeRateNum": 0.0,
-        "outboundCalls": 70,
-        "inboundCalls": 9,
-        "totalCalls": 79,
-        "callHours": 2.5,
+        "closeRate": "12%",
+        "closeRateNum": 11.764705882352942,
+        "outboundCalls": 97,
+        "inboundCalls": 11,
+        "totalCalls": 108,
+        "callHours": 2.8,
         "rank": 1,
         "trend": "down",
-        "trendNote": "-$4,997.00, -1 deal",
+        "trendNote": "-$3,003.00, +1 deal",
         "badges": [
+          "Leading",
           "Top Closer",
           "First Deal",
           "Most Active",
           "Most Booked"
         ],
-        "gapNote": "No cash collected yet this window"
+        "gapNote": "Leading by $1,994.00"
       },
       {
         "key": "carlos",
@@ -352,9 +356,9 @@
         "showRateNum": 53.84615384615385,
         "closeRate": "0%",
         "closeRateNum": 0.0,
-        "outboundCalls": 4,
+        "outboundCalls": 8,
         "inboundCalls": 0,
-        "totalCalls": 4,
+        "totalCalls": 8,
         "callHours": 0.0,
         "rank": 2,
         "trend": "flat",
@@ -362,7 +366,7 @@
         "badges": [
           "Best Show Rate"
         ],
-        "gapNote": "No cash collected yet this window"
+        "gapNote": "$1,994.00 to pass Caleb Chase"
       },
       {
         "key": "james",
@@ -388,7 +392,7 @@
         "trend": "flat",
         "trendNote": "flat vs prior period",
         "badges": [],
-        "gapNote": "No cash collected yet this window"
+        "gapNote": "$1,994.00 to pass Caleb Chase"
       }
     ],
     "allTime": [
@@ -396,22 +400,22 @@
         "key": "caleb",
         "name": "Caleb Chase",
         "status": "active",
-        "dealsClosed": 1,
-        "cash": "$4,997.00",
-        "cashCents": 499700,
-        "callsBooked": 71,
+        "dealsClosed": 3,
+        "cash": "$6,991.00",
+        "cashCents": 699100,
+        "callsBooked": 72,
         "callsHeld": 0,
         "noShow": 24,
         "noShowRate": "57%",
         "showed": 18,
         "showRate": "43%",
         "showRateNum": 42.857142857142854,
-        "closeRate": "6%",
-        "closeRateNum": 5.555555555555555,
-        "outboundCalls": 80,
-        "inboundCalls": 13,
-        "totalCalls": 93,
-        "callHours": 2.9,
+        "closeRate": "17%",
+        "closeRateNum": 16.666666666666668,
+        "outboundCalls": 107,
+        "inboundCalls": 15,
+        "totalCalls": 122,
+        "callHours": 3.2,
         "rank": 1,
         "trend": "na",
         "trendNote": "since launch, no prior period",
@@ -422,7 +426,7 @@
           "Most Active",
           "Most Booked"
         ],
-        "gapNote": "Leading by $4,997.00"
+        "gapNote": "Leading by $6,991.00"
       },
       {
         "key": "carlos",
@@ -440,9 +444,9 @@
         "showRateNum": 52.94117647058823,
         "closeRate": "0%",
         "closeRateNum": 0.0,
-        "outboundCalls": 4,
+        "outboundCalls": 8,
         "inboundCalls": 0,
-        "totalCalls": 4,
+        "totalCalls": 8,
         "callHours": 0.0,
         "rank": 2,
         "trend": "na",
@@ -450,7 +454,7 @@
         "badges": [
           "Best Show Rate"
         ],
-        "gapNote": "$4,997.00 to pass Caleb Chase"
+        "gapNote": "$6,991.00 to pass Caleb Chase"
       },
       {
         "key": "james",
@@ -476,7 +480,7 @@
         "trend": "na",
         "trendNote": "since launch, no prior period",
         "badges": [],
-        "gapNote": "$4,997.00 to pass Caleb Chase"
+        "gapNote": "$6,991.00 to pass Caleb Chase"
       }
     ]
   },
@@ -486,25 +490,25 @@
         "key": "caleb",
         "name": "Caleb Chase",
         "status": "active",
-        "dealsClosed": 0,
-        "cash": "$0.00",
-        "cashCents": 0,
-        "callsBooked": 4,
+        "dealsClosed": 2,
+        "cash": "$1,994.00",
+        "cashCents": 199400,
+        "callsBooked": 9,
         "callsHeld": 0,
         "noShow": 1,
-        "noShowRate": "50%",
-        "showed": 1,
-        "showRate": "50%",
-        "showRateNum": 50.0,
-        "closeRate": "0%",
-        "closeRateNum": 0.0,
-        "outboundCalls": 9,
-        "inboundCalls": 1,
-        "totalCalls": 10,
-        "callHours": 0.1,
+        "noShowRate": "25%",
+        "showed": 3,
+        "showRate": "75%",
+        "showRateNum": 75.0,
+        "closeRate": "67%",
+        "closeRateNum": 66.66666666666667,
+        "outboundCalls": 36,
+        "inboundCalls": 3,
+        "totalCalls": 39,
+        "callHours": 0.4,
         "rank": 1,
-        "trend": "flat",
-        "trendNote": "flat vs prior period"
+        "trend": "up",
+        "trendNote": "+$1,994.00, +2 deals"
       },
       {
         "key": "carlos",
@@ -522,9 +526,9 @@
         "showRateNum": null,
         "closeRate": "awaiting",
         "closeRateNum": null,
-        "outboundCalls": 2,
+        "outboundCalls": 6,
         "inboundCalls": 0,
-        "totalCalls": 2,
+        "totalCalls": 6,
         "callHours": 0.0,
         "rank": 2,
         "trend": "flat",
@@ -608,25 +612,25 @@
         "key": "caleb",
         "name": "Caleb Chase",
         "status": "active",
-        "dealsClosed": 0,
-        "cash": "$0.00",
-        "cashCents": 0,
-        "callsBooked": 4,
+        "dealsClosed": 2,
+        "cash": "$1,994.00",
+        "cashCents": 199400,
+        "callsBooked": 9,
         "callsHeld": 0,
         "noShow": 1,
-        "noShowRate": "50%",
-        "showed": 1,
-        "showRate": "50%",
-        "showRateNum": 50.0,
-        "closeRate": "0%",
-        "closeRateNum": 0.0,
-        "outboundCalls": 9,
-        "inboundCalls": 1,
-        "totalCalls": 10,
-        "callHours": 0.1,
+        "noShowRate": "25%",
+        "showed": 3,
+        "showRate": "75%",
+        "showRateNum": 75.0,
+        "closeRate": "67%",
+        "closeRateNum": 66.66666666666667,
+        "outboundCalls": 36,
+        "inboundCalls": 3,
+        "totalCalls": 39,
+        "callHours": 0.4,
         "rank": 1,
-        "trend": "flat",
-        "trendNote": "flat vs prior period"
+        "trend": "up",
+        "trendNote": "+$1,994.00, +2 deals"
       },
       {
         "key": "carlos",
@@ -644,9 +648,9 @@
         "showRateNum": null,
         "closeRate": "awaiting",
         "closeRateNum": null,
-        "outboundCalls": 2,
+        "outboundCalls": 6,
         "inboundCalls": 0,
-        "totalCalls": 2,
+        "totalCalls": 6,
         "callHours": 0.0,
         "rank": 2,
         "trend": "flat",
@@ -730,25 +734,25 @@
         "key": "caleb",
         "name": "Caleb Chase",
         "status": "active",
-        "dealsClosed": 0,
-        "cash": "$0.00",
-        "cashCents": 0,
-        "callsBooked": 66,
+        "dealsClosed": 2,
+        "cash": "$1,994.00",
+        "cashCents": 199400,
+        "callsBooked": 67,
         "callsHeld": 0,
         "noShow": 21,
         "noShowRate": "55%",
         "showed": 17,
         "showRate": "45%",
         "showRateNum": 44.73684210526316,
-        "closeRate": "0%",
-        "closeRateNum": 0.0,
-        "outboundCalls": 70,
-        "inboundCalls": 9,
-        "totalCalls": 79,
-        "callHours": 2.5,
+        "closeRate": "12%",
+        "closeRateNum": 11.764705882352942,
+        "outboundCalls": 97,
+        "inboundCalls": 11,
+        "totalCalls": 108,
+        "callHours": 2.8,
         "rank": 1,
         "trend": "down",
-        "trendNote": "-$4,997.00, -1 deal"
+        "trendNote": "-$3,003.00, +1 deal"
       },
       {
         "key": "carlos",
@@ -766,9 +770,9 @@
         "showRateNum": 53.84615384615385,
         "closeRate": "0%",
         "closeRateNum": 0.0,
-        "outboundCalls": 4,
+        "outboundCalls": 8,
         "inboundCalls": 0,
-        "totalCalls": 4,
+        "totalCalls": 8,
         "callHours": 0.0,
         "rank": 2,
         "trend": "flat",
@@ -852,25 +856,25 @@
         "key": "caleb",
         "name": "Caleb Chase",
         "status": "active",
-        "dealsClosed": 0,
-        "cash": "$0.00",
-        "cashCents": 0,
-        "callsBooked": 66,
+        "dealsClosed": 2,
+        "cash": "$1,994.00",
+        "cashCents": 199400,
+        "callsBooked": 67,
         "callsHeld": 0,
         "noShow": 21,
         "noShowRate": "55%",
         "showed": 17,
         "showRate": "45%",
         "showRateNum": 44.73684210526316,
-        "closeRate": "0%",
-        "closeRateNum": 0.0,
-        "outboundCalls": 70,
-        "inboundCalls": 9,
-        "totalCalls": 79,
-        "callHours": 2.5,
+        "closeRate": "12%",
+        "closeRateNum": 11.764705882352942,
+        "outboundCalls": 97,
+        "inboundCalls": 11,
+        "totalCalls": 108,
+        "callHours": 2.8,
         "rank": 1,
         "trend": "down",
-        "trendNote": "-$4,997.00, -1 deal"
+        "trendNote": "-$3,003.00, +1 deal"
       },
       {
         "key": "carlos",
@@ -888,9 +892,9 @@
         "showRateNum": 53.84615384615385,
         "closeRate": "0%",
         "closeRateNum": 0.0,
-        "outboundCalls": 4,
+        "outboundCalls": 8,
         "inboundCalls": 0,
-        "totalCalls": 4,
+        "totalCalls": 8,
         "callHours": 0.0,
         "rank": 2,
         "trend": "flat",
@@ -974,22 +978,22 @@
         "key": "caleb",
         "name": "Caleb Chase",
         "status": "active",
-        "dealsClosed": 1,
-        "cash": "$4,997.00",
-        "cashCents": 499700,
-        "callsBooked": 71,
+        "dealsClosed": 3,
+        "cash": "$6,991.00",
+        "cashCents": 699100,
+        "callsBooked": 72,
         "callsHeld": 0,
         "noShow": 24,
         "noShowRate": "57%",
         "showed": 18,
         "showRate": "43%",
         "showRateNum": 42.857142857142854,
-        "closeRate": "6%",
-        "closeRateNum": 5.555555555555555,
-        "outboundCalls": 80,
-        "inboundCalls": 13,
-        "totalCalls": 93,
-        "callHours": 2.9,
+        "closeRate": "17%",
+        "closeRateNum": 16.666666666666668,
+        "outboundCalls": 107,
+        "inboundCalls": 15,
+        "totalCalls": 122,
+        "callHours": 3.2,
         "rank": 1,
         "trend": "na",
         "trendNote": "since launch, no prior period"
@@ -1010,9 +1014,9 @@
         "showRateNum": 52.94117647058823,
         "closeRate": "0%",
         "closeRateNum": 0.0,
-        "outboundCalls": 4,
+        "outboundCalls": 8,
         "inboundCalls": 0,
-        "totalCalls": 4,
+        "totalCalls": 8,
         "callHours": 0.0,
         "rank": 2,
         "trend": "na",
@@ -1094,241 +1098,253 @@
   },
   "totals": {
     "day": {
-      "dealsClosed": 0,
-      "cash": "$0.00",
-      "cashCents": 0,
-      "callsBooked": 4,
+      "dealsClosed": 2,
+      "cash": "$1,994.00",
+      "cashCents": 199400,
+      "callsBooked": 9,
       "callsHeld": 0,
       "noShow": 1,
-      "noShowRate": "50%",
-      "showed": 1,
-      "showRate": "50%",
-      "closeRate": "0%",
-      "outboundCalls": 11,
-      "inboundCalls": 1,
-      "totalCalls": 12,
-      "callHours": 0.1,
-      "trend": "flat",
-      "trendNote": "flat vs prior period"
+      "noShowRate": "25%",
+      "showed": 3,
+      "showRate": "75%",
+      "closeRate": "67%",
+      "outboundCalls": 42,
+      "inboundCalls": 3,
+      "totalCalls": 45,
+      "callHours": 0.4,
+      "trend": "up",
+      "trendNote": "+$1,994.00, +2 deals"
     },
     "week": {
-      "dealsClosed": 0,
-      "cash": "$0.00",
-      "cashCents": 0,
-      "callsBooked": 4,
+      "dealsClosed": 2,
+      "cash": "$1,994.00",
+      "cashCents": 199400,
+      "callsBooked": 9,
       "callsHeld": 0,
       "noShow": 1,
-      "noShowRate": "50%",
-      "showed": 1,
-      "showRate": "50%",
-      "closeRate": "0%",
-      "outboundCalls": 11,
-      "inboundCalls": 1,
-      "totalCalls": 12,
-      "callHours": 0.1,
-      "trend": "flat",
-      "trendNote": "flat vs prior period"
+      "noShowRate": "25%",
+      "showed": 3,
+      "showRate": "75%",
+      "closeRate": "67%",
+      "outboundCalls": 42,
+      "inboundCalls": 3,
+      "totalCalls": 45,
+      "callHours": 0.4,
+      "trend": "up",
+      "trendNote": "+$1,994.00, +2 deals"
     },
     "month": {
-      "dealsClosed": 0,
-      "cash": "$0.00",
-      "cashCents": 0,
-      "callsBooked": 106,
+      "dealsClosed": 2,
+      "cash": "$1,994.00",
+      "cashCents": 199400,
+      "callsBooked": 107,
       "callsHeld": 2,
       "noShow": 27,
       "noShowRate": "53%",
       "showed": 24,
       "showRate": "47%",
-      "closeRate": "0%",
-      "outboundCalls": 104,
-      "inboundCalls": 10,
-      "totalCalls": 114,
-      "callHours": 2.7,
+      "closeRate": "8%",
+      "outboundCalls": 135,
+      "inboundCalls": 12,
+      "totalCalls": 147,
+      "callHours": 3.1,
       "trend": "down",
-      "trendNote": "-$4,997.00, -1 deal"
+      "trendNote": "-$3,003.00, +1 deal"
     },
     "quarter": {
-      "dealsClosed": 0,
-      "cash": "$0.00",
-      "cashCents": 0,
-      "callsBooked": 106,
+      "dealsClosed": 2,
+      "cash": "$1,994.00",
+      "cashCents": 199400,
+      "callsBooked": 107,
       "callsHeld": 2,
       "noShow": 27,
       "noShowRate": "53%",
       "showed": 24,
       "showRate": "47%",
-      "closeRate": "0%",
-      "outboundCalls": 104,
-      "inboundCalls": 10,
-      "totalCalls": 114,
-      "callHours": 2.7,
+      "closeRate": "8%",
+      "outboundCalls": 135,
+      "inboundCalls": 12,
+      "totalCalls": 147,
+      "callHours": 3.1,
       "trend": "down",
-      "trendNote": "-$4,997.00, -1 deal"
+      "trendNote": "-$3,003.00, +1 deal"
     },
     "allTime": {
-      "dealsClosed": 1,
-      "cash": "$4,997.00",
-      "cashCents": 499700,
-      "callsBooked": 121,
+      "dealsClosed": 3,
+      "cash": "$6,991.00",
+      "cashCents": 699100,
+      "callsBooked": 122,
       "callsHeld": 3,
       "noShow": 32,
       "noShowRate": "54%",
       "showed": 27,
       "showRate": "46%",
-      "closeRate": "4%",
-      "outboundCalls": 133,
-      "inboundCalls": 14,
-      "totalCalls": 147,
-      "callHours": 3.3,
+      "closeRate": "11%",
+      "outboundCalls": 164,
+      "inboundCalls": 16,
+      "totalCalls": 180,
+      "callHours": 3.7,
       "trend": "na",
       "trendNote": "since launch, no prior period"
     }
   },
   "activeTotals": {
     "day": {
-      "dealsClosed": 0,
-      "cash": "$0.00",
-      "cashCents": 0,
-      "callsBooked": 4,
+      "dealsClosed": 2,
+      "cash": "$1,994.00",
+      "cashCents": 199400,
+      "callsBooked": 9,
       "callsHeld": 0,
       "noShow": 1,
-      "noShowRate": "50%",
-      "showed": 1,
-      "showRate": "50%",
-      "closeRate": "0%",
-      "outboundCalls": 11,
-      "inboundCalls": 1,
-      "totalCalls": 12,
-      "callHours": 0.1,
-      "trend": "flat",
-      "trendNote": "flat vs prior period"
+      "noShowRate": "25%",
+      "showed": 3,
+      "showRate": "75%",
+      "closeRate": "67%",
+      "outboundCalls": 42,
+      "inboundCalls": 3,
+      "totalCalls": 45,
+      "callHours": 0.4,
+      "trend": "up",
+      "trendNote": "+$1,994.00, +2 deals"
     },
     "week": {
-      "dealsClosed": 0,
-      "cash": "$0.00",
-      "cashCents": 0,
-      "callsBooked": 4,
+      "dealsClosed": 2,
+      "cash": "$1,994.00",
+      "cashCents": 199400,
+      "callsBooked": 9,
       "callsHeld": 0,
       "noShow": 1,
-      "noShowRate": "50%",
-      "showed": 1,
-      "showRate": "50%",
-      "closeRate": "0%",
-      "outboundCalls": 11,
-      "inboundCalls": 1,
-      "totalCalls": 12,
-      "callHours": 0.1,
-      "trend": "flat",
-      "trendNote": "flat vs prior period"
+      "noShowRate": "25%",
+      "showed": 3,
+      "showRate": "75%",
+      "closeRate": "67%",
+      "outboundCalls": 42,
+      "inboundCalls": 3,
+      "totalCalls": 45,
+      "callHours": 0.4,
+      "trend": "up",
+      "trendNote": "+$1,994.00, +2 deals"
     },
     "month": {
-      "dealsClosed": 0,
-      "cash": "$0.00",
-      "cashCents": 0,
-      "callsBooked": 106,
+      "dealsClosed": 2,
+      "cash": "$1,994.00",
+      "cashCents": 199400,
+      "callsBooked": 107,
       "callsHeld": 2,
       "noShow": 27,
       "noShowRate": "53%",
       "showed": 24,
       "showRate": "47%",
-      "closeRate": "0%",
-      "outboundCalls": 74,
-      "inboundCalls": 9,
-      "totalCalls": 83,
-      "callHours": 2.5,
+      "closeRate": "8%",
+      "outboundCalls": 105,
+      "inboundCalls": 11,
+      "totalCalls": 116,
+      "callHours": 2.8,
       "trend": "down",
-      "trendNote": "-$4,997.00, -1 deal"
+      "trendNote": "-$3,003.00, +1 deal"
     },
     "quarter": {
-      "dealsClosed": 0,
-      "cash": "$0.00",
-      "cashCents": 0,
-      "callsBooked": 106,
+      "dealsClosed": 2,
+      "cash": "$1,994.00",
+      "cashCents": 199400,
+      "callsBooked": 107,
       "callsHeld": 2,
       "noShow": 27,
       "noShowRate": "53%",
       "showed": 24,
       "showRate": "47%",
-      "closeRate": "0%",
-      "outboundCalls": 74,
-      "inboundCalls": 9,
-      "totalCalls": 83,
-      "callHours": 2.5,
+      "closeRate": "8%",
+      "outboundCalls": 105,
+      "inboundCalls": 11,
+      "totalCalls": 116,
+      "callHours": 2.8,
       "trend": "down",
-      "trendNote": "-$4,997.00, -1 deal"
+      "trendNote": "-$3,003.00, +1 deal"
     },
     "allTime": {
-      "dealsClosed": 1,
-      "cash": "$4,997.00",
-      "cashCents": 499700,
-      "callsBooked": 121,
+      "dealsClosed": 3,
+      "cash": "$6,991.00",
+      "cashCents": 699100,
+      "callsBooked": 122,
       "callsHeld": 3,
       "noShow": 32,
       "noShowRate": "54%",
       "showed": 27,
       "showRate": "46%",
-      "closeRate": "4%",
-      "outboundCalls": 94,
-      "inboundCalls": 13,
-      "totalCalls": 107,
-      "callHours": 2.9,
+      "closeRate": "11%",
+      "outboundCalls": 125,
+      "inboundCalls": 15,
+      "totalCalls": 140,
+      "callHours": 3.2,
       "trend": "na",
       "trendNote": "since launch, no prior period"
     }
   },
   "leaders": {
     "day": {
-      "topCash": null,
+      "topCash": {
+        "key": "caleb",
+        "name": "Caleb Chase",
+        "value": "$1,994.00"
+      },
       "topCloseRate": {
         "key": "caleb",
         "name": "Caleb Chase",
-        "value": "0%"
+        "value": "67%"
       },
       "topShowRate": {
         "key": "caleb",
         "name": "Caleb Chase",
-        "value": "50%"
+        "value": "75%"
       },
       "mostActive": {
         "key": "caleb",
         "name": "Caleb Chase",
-        "value": 10
+        "value": 39
       },
       "topBooked": {
         "key": "caleb",
         "name": "Caleb Chase",
-        "value": 4
+        "value": 9
       }
     },
     "week": {
-      "topCash": null,
+      "topCash": {
+        "key": "caleb",
+        "name": "Caleb Chase",
+        "value": "$1,994.00"
+      },
       "topCloseRate": {
         "key": "caleb",
         "name": "Caleb Chase",
-        "value": "0%"
+        "value": "67%"
       },
       "topShowRate": {
         "key": "caleb",
         "name": "Caleb Chase",
-        "value": "50%"
+        "value": "75%"
       },
       "mostActive": {
         "key": "caleb",
         "name": "Caleb Chase",
-        "value": 10
+        "value": 39
       },
       "topBooked": {
         "key": "caleb",
         "name": "Caleb Chase",
-        "value": 4
+        "value": 9
       }
     },
     "month": {
-      "topCash": null,
+      "topCash": {
+        "key": "caleb",
+        "name": "Caleb Chase",
+        "value": "$1,994.00"
+      },
       "topCloseRate": {
         "key": "caleb",
         "name": "Caleb Chase",
-        "value": "0%"
+        "value": "12%"
       },
       "topShowRate": {
         "key": "carlos",
@@ -1338,20 +1354,24 @@
       "mostActive": {
         "key": "caleb",
         "name": "Caleb Chase",
-        "value": 79
+        "value": 108
       },
       "topBooked": {
         "key": "caleb",
         "name": "Caleb Chase",
-        "value": 66
+        "value": 67
       }
     },
     "quarter": {
-      "topCash": null,
+      "topCash": {
+        "key": "caleb",
+        "name": "Caleb Chase",
+        "value": "$1,994.00"
+      },
       "topCloseRate": {
         "key": "caleb",
         "name": "Caleb Chase",
-        "value": "0%"
+        "value": "12%"
       },
       "topShowRate": {
         "key": "carlos",
@@ -1361,24 +1381,24 @@
       "mostActive": {
         "key": "caleb",
         "name": "Caleb Chase",
-        "value": 79
+        "value": 108
       },
       "topBooked": {
         "key": "caleb",
         "name": "Caleb Chase",
-        "value": 66
+        "value": 67
       }
     },
     "allTime": {
       "topCash": {
         "key": "caleb",
         "name": "Caleb Chase",
-        "value": "$4,997.00"
+        "value": "$6,991.00"
       },
       "topCloseRate": {
         "key": "caleb",
         "name": "Caleb Chase",
-        "value": "6%"
+        "value": "17%"
       },
       "topShowRate": {
         "key": "carlos",
@@ -1388,12 +1408,12 @@
       "mostActive": {
         "key": "caleb",
         "name": "Caleb Chase",
-        "value": 93
+        "value": 122
       },
       "topBooked": {
         "key": "caleb",
         "name": "Caleb Chase",
-        "value": 71
+        "value": 72
       }
     }
   },
@@ -1664,7 +1684,7 @@
     },
     {
       "date": "2026-07-07",
-      "callsBooked": 35,
+      "callsBooked": 33,
       "callsHeld": 0,
       "noShow": 13,
       "showed": 5,
@@ -1700,10 +1720,10 @@
     },
     {
       "date": "2026-07-10",
-      "callsBooked": 8,
+      "callsBooked": 7,
       "callsHeld": 0,
       "noShow": 3,
-      "showed": 2,
+      "showed": 1,
       "won": 0,
       "cashCents": 0,
       "outboundCalls": 14,
@@ -1724,10 +1744,10 @@
     },
     {
       "date": "2026-07-12",
-      "callsBooked": 17,
+      "callsBooked": 16,
       "callsHeld": 1,
       "noShow": 1,
-      "showed": 7,
+      "showed": 6,
       "won": 0,
       "cashCents": 0,
       "outboundCalls": 3,
@@ -1736,25 +1756,25 @@
     },
     {
       "date": "2026-07-13",
-      "callsBooked": 4,
+      "callsBooked": 9,
       "callsHeld": 0,
       "noShow": 1,
-      "showed": 1,
-      "won": 0,
-      "cashCents": 0,
-      "outboundCalls": 11,
-      "inboundCalls": 1,
-      "totalCalls": 12
+      "showed": 3,
+      "won": 2,
+      "cashCents": 199400,
+      "outboundCalls": 42,
+      "inboundCalls": 3,
+      "totalCalls": 45
     }
   ],
   "dailyInsights": {
-    "callsBookedNote": "121 calls booked since launch, 93 in the last 7 days. Busiest day: Jul 7 with 35.",
-    "showRateNote": "Show rate has ranged 0% to 88% across the 13 days with a resolved call, averaging 48% recently.",
-    "cashNote": "$4,997.00 collected total, entirely from one sale on Jun 30. No cash collected in the 13 days since.",
-    "totalCallsBooked": 121,
+    "callsBookedNote": "122 calls booked since launch, 94 in the last 7 days. Busiest day: Jul 7 with 33.",
+    "showRateNote": "Show rate has ranged 0% to 86% across the 13 days with a resolved call, averaging 49% recently.",
+    "cashNote": "$6,991.00 collected total across 2 days with a sale, most recently Jul 13.",
+    "totalCallsBooked": 122,
     "bestDay": {
       "label": "Jul 7",
-      "value": 35
+      "value": 33
     },
     "activeDays": 20,
     "totalDays": 29
@@ -1764,7 +1784,7 @@
       "key": "newUnworked",
       "label": "New, Unworked",
       "count": 100,
-      "pct": "41%"
+      "pct": "40%"
     },
     {
       "key": "contacted",
@@ -1775,14 +1795,14 @@
     {
       "key": "callBooked",
       "label": "Call Booked",
-      "count": 45,
-      "pct": "18%"
+      "count": 48,
+      "pct": "19%"
     },
     {
       "key": "rescheduling",
       "label": "Rescheduling",
-      "count": 21,
-      "pct": "9%"
+      "count": 19,
+      "pct": "8%"
     },
     {
       "key": "noShow",
@@ -1805,19 +1825,19 @@
     {
       "key": "highPriority",
       "label": "High Priority",
-      "count": 23,
+      "count": 21,
       "pct": "9%"
     },
     {
       "key": "closedWon",
       "label": "Closed Won",
-      "count": 1,
-      "pct": "0%"
+      "count": 3,
+      "pct": "1%"
     },
     {
       "key": "longTermNurture",
       "label": "Long-Term Nurture",
-      "count": 4,
+      "count": 5,
       "pct": "2%"
     },
     {
@@ -1827,15 +1847,15 @@
       "pct": "3%"
     }
   ],
-  "funnelTotal": 245,
+  "funnelTotal": 247,
   "funnelInsights": {
-    "leadNote": "100 of 245 opportunities (41%) are still New, Unworked.",
-    "closeNote": "Of the 133 opportunities that reached Call Booked or further, 1 has closed (1%)."
+    "leadNote": "100 of 247 opportunities (40%) are still New, Unworked.",
+    "closeNote": "Of the 134 opportunities that reached Call Booked or further, 3 have closed (2%)."
   },
   "audit": {
     "excludedTestRecords": 4,
-    "totalOpportunitiesPulled": 245,
-    "nonCloserCallsAllTime": 132,
+    "totalOpportunitiesPulled": 247,
+    "nonCloserCallsAllTime": 139,
     "unattributedCashAllTime": "$0.00",
     "offboardedClosers": [
       "Matthew Burns",
