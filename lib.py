@@ -46,6 +46,7 @@ ALL_WINDOW_KEYS = WINDOW_KEYS + tuple(PREV_OF.values())
 STAGE_MAP = {
     "b9bfc681-76ef-4402-a7b8-428e39788582": "newUnworked",
     "910d1097-8955-4f62-9c79-eaafc3963a22": "contacted",
+    "6bf502e8-54b7-4f8e-9ad6-d4e2cc79bbed": "contactedNoAnswer",
     "a774b303-1cba-4279-b5d5-d06ae8eca597": "callBooked",
     "58b9e8fb-3e0f-4273-84d7-2a11c7bc0b59": "rescheduling",
     "8dec9a2c-863a-45d4-8495-f7dc8c17704b": "noShow",
@@ -61,6 +62,7 @@ STAGE_MAP = {
 STAGE_DISPLAY = [
     ("newUnworked", "New, Unworked"),
     ("contacted", "Contacted"),
+    ("contactedNoAnswer", "Contacted - No Answer"),
     ("callBooked", "Call Booked"),
     ("rescheduling", "Rescheduling"),
     ("noShow", "No Show"),
